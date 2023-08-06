@@ -36,7 +36,7 @@ export const userSchema = new Schema<UserI>({
     myWishes: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'Wish',
+            ref: 'House',
         },
     ],
 });

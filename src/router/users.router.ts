@@ -1,12 +1,12 @@
 import { Router } from 'express';
 import { UserController } from '../controllers/user.controller.js';
 import { UserRepository } from '../repositories/user.repository.js';
-import { WishRepository } from '../repositories/wish.repository.js';
+import { HouseRepository } from '../repositories/house.repository.js';
 
 export const usersRouter = Router();
 
 const controller = new UserController(
-    WishRepository.getInstance(),
+    HouseRepository.getInstance(),
     UserRepository.getInstance()
 );
 

@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import { WishRepo, UserRepo } from '../repositories/repo.js';
+import { HouseRepo, UserRepo } from '../repositories/repo.js';
 import { HTTPError } from '../interfaces/error.js';
 import { createToken, passwdValidate } from '../services/auth.js';
 import createDebug from 'debug';
@@ -7,7 +7,7 @@ const debug = createDebug('Wish:controller');
 
 export class UserController {
     constructor(
-        public readonly wishRepo: WishRepo,
+        public readonly wishRepo: HouseRepo,
         public readonly userRepo: UserRepo
     ) {}
 
@@ -52,7 +52,7 @@ export class UserController {
             const token = createToken({
                 id: user.id.toString(),
                 name: user.name.toString(),
-                role: user.role.toString(),
+                role: 'user',
             });
             resp.status(201);
             resp.json({ token, user });

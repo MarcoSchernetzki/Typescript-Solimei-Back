@@ -1,14 +1,14 @@
+import { House } from '../entities/house.js';
 import { UserI } from '../entities/user.js';
-import { WishI } from '../entities/wish.js';
 
 export type id = number | string;
 
-export interface WishRepo {
-    getAll: () => Promise<Array<WishI>>;
-    getWish: (id: id) => Promise<WishI>;
-    findInspo: (data: Partial<WishI>) => Promise<WishI[]>;
-    postNew: (data: Partial<WishI>) => Promise<WishI>;
-    patch: (id: id, data: Partial<WishI>) => Promise<WishI>;
+export interface HouseRepo {
+    getAll: () => Promise<Array<House>>;
+    getWish: (id: id) => Promise<House>;
+    findInspo: (data: Partial<House>) => Promise<House[]>;
+    postNew: (data: Partial<House>) => Promise<House>;
+    patch: (id: id, data: Partial<House>) => Promise<House>;
     delete: (id: id) => Promise<id>;
 }
 
